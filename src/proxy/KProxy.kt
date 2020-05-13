@@ -42,9 +42,24 @@ class BirdTimeProxy: Flyable {
     }
 }
 
-// =================
+// =========JDK 动态代理 和 CGLib 动态代理========
+/**
+ * JDK 动态代理是基于 Java 的反射，必须要实现了接口的类才能用这种方法去代理
+ * CGLIB 动态代理是基于 ASM 机制实现，通过生成业务类的子类作为代理类
+ *
+ * JDK 动态代理的优势：
+ * 1. 最小化依赖
+ * 2. 代码实现简单
+ *
+ * CGLib 动态代理的优势：
+ * 1. 无需实现接口，达到代理类无侵入
+ * 2. 高性能
+ * 3. 不关心其他类，只关心我们操作类
+ */
 
 fun main() {
-    val birdTime = BirdTimeProxy(Bird())
-    birdTime.fly()
+    // 静态代理
+//    val birdTime = BirdTimeProxy(Bird())
+//    birdTime.fly()
+
 }
